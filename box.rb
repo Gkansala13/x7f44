@@ -11,7 +11,7 @@ class Box
     @shut_tiles = []
   end
 
-  def shut?
+  def is_box_shut?
     @tiles.empty? && @shut_tiles.length == number_of_tiles
   end
 

@@ -1,7 +1,7 @@
 class Game
 
   WELCOME_MESSAGE = "Welcome to Shut da Box!"
-  W_M = "You shut da box!"
+  WINNER_MESSAGE = "You shut da box!"
 
   attr_reader :box, :dice
 
@@ -11,7 +11,7 @@ class Game
   end
 
   def over?
-    box.shut? || box.can_flip_for?(dice.map(&:value).reduce(:+))
+    box.is_box_shut? || box.can_flip_for?(dice.map(&:value).reduce(:+))
   end
 
   def start!
@@ -39,7 +39,7 @@ class Game
   end
 
   def results
-    box.shut? ? W_M : "Game over, you did not shut da box."
+    box.is_box_shut? ? WINNER_MESSAGE : "Game over, you did not shut da box."
   end
 
 end

@@ -23,11 +23,7 @@ class Game
   end
 
   def play
-    print '| '
-    box.get_tiles().each do |tile|
-      print tile.to_s + ' | '
-    end
-    print "\n"
+    box.starting_tiles
     print "You rolled: "
     dice.each do |die|
       print "#{die.value} "

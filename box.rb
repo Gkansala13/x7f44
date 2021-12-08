@@ -10,6 +10,14 @@ class Box
     end
     @shut_tiles = []
   end
+  
+  def starting_tiles
+    print '| '
+    get_tiles().each do |tile|
+      print tile.to_s + ' | '
+    end
+    print "\n"
+  end
 
   def is_box_shut?
     @tiles.empty? && @shut_tiles.length == number_of_tiles
